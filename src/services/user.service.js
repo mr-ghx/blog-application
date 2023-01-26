@@ -1,8 +1,9 @@
 import http from "../http_common";
 
 class UserDataService {
-  getUser(email) {
+  getUser(name, email) {
     const data = {
+      name: name,
       email: email,
     };
     return http.post("/user/add", data);

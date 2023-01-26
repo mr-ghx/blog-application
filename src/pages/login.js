@@ -19,7 +19,7 @@ const Login = (props) => {
 
   const login = () => {
     if (user.email !== "") {
-      UserDataService.getUser(user.email)
+      UserDataService.getUser(user.name, user.email)
         .then((response) => {
           console.log(response.data);
           props.login(response.data);
@@ -60,6 +60,7 @@ const Login = (props) => {
               value={user.email}
               onChange={handleInputChange}
               name="email"
+              pattern="/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/"
             />
           </div>
 

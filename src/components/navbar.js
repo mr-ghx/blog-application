@@ -23,7 +23,7 @@ const Navbar = (props) => {
           <li className="navbar-item">
             {props.user ? (
               <a onClick={props.logout} className="nav-link" style={{cursor: "pointer"}}>
-                Logout {props.user.email}
+                Logout {props.user.name.split(" ")[0]}
               </a>
             ) : (
               <Link to="/login" className="nav-link">

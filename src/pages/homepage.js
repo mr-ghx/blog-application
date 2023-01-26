@@ -16,7 +16,7 @@ const HomePage = (props) => {
       ) : (
         <div>
           <h5>
-            Hello <lowercase>{props.user.email}</lowercase>
+            Hello <lowercase>{props.user.name}</lowercase>
           </h5>
           {new Date(props.user.premiumUntil) < new Date(Date.now()) ? (
             <p>Free user</p>

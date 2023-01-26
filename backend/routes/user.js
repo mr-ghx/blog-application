@@ -17,9 +17,10 @@ router.route("/fetch").get((req, res) => {
 router.route("/add").post((req, res) => {
   //   let userId;
 
+  const name = req.body.name;
   const email = req.body.email;
 
-  const newUser = new User({ email });
+  const newUser = new User({ name, email });
 
   newUser
     .save()
@@ -28,6 +29,7 @@ router.route("/add").post((req, res) => {
       res.json({
         success: true,
         id: user.id,
+        name: user.name,
         email: user.email,
         premium: user.premium,
         premiumUntil: user.premiumUntil,
@@ -42,6 +44,7 @@ router.route("/add").post((req, res) => {
             res.json({
               success: true,
               id: user[0]._id,
+              name: user[0].name,
               email: user[0].email,
               premium: user[0].premium,
               premiumUntil: user[0].premiumUntil,

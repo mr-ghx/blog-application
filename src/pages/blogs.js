@@ -27,7 +27,7 @@ const Blogs = (props) => {
 
   const refreshUserData = () => {
     setModalShow(false);
-    UserDataService.getUser(props.user.email)
+    UserDataService.getUser(props.user.name, props.user.email)
       .then((response) => {
         console.log(response.data);
         props.setUser(response.data);
